@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require '../algorithms/linear_search'
 require '../algorithms/binary_search'
+require '../algorithms/interpolation_search'
 
 class AlgoTest < MiniTest::Test
 
@@ -20,6 +21,16 @@ class AlgoTest < MiniTest::Test
 		assert_equal("not found", Algorithms::Search::Binary.new.search(15, [1,2,3,4,5,6,7,8,9,10]))
 		assert_equal(2, Algorithms::Search::Binary.new.search(3, [1,2,3,4,5,6,7,8,9,10]))
 		assert_equal('not found', Algorithms::Search::Binary.new.search(98, [1,2,3,4,5,6,7,8,9,10]))
+    stop = Time.now
+    p (start - stop)
+	end
+
+	def test_interpolation_search
+    start = Time.now
+		assert_equal(9, Algorithms::Search::Interpolation.new.search(10, [1,2,3,4,5,6,7,8,9,10]))
+		assert_equal("not found", Algorithms::Search::Interpolation.new.search(15, [1,2,3,4,5,6,7,8,9,10]))
+		assert_equal(2, Algorithms::Search::Interpolation.new.search(3, [1,2,3,4,5,6,7,8,9,10]))
+		assert_equal('not found', Algorithms::Search::Interpolation.new.search(-98, [1,2,3,4,5,6,7,8,9,10]))
     stop = Time.now
     p (start - stop)
 	end
