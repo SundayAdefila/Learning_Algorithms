@@ -1,9 +1,9 @@
 require 'minitest/autorun'
-require '../algorithms/linear_search'
-require '../algorithms/binary_search'
-require '../algorithms/interpolation_search'
+require '../algorithms/search/linear_search'
+require '../algorithms/search/binary_search'
+require '../algorithms/search/interpolation_search'
 
-class AlgoTest < MiniTest::Test
+class AlgoSearchTest < MiniTest::Test
 
 	def test_linear_search
     start = Time.now
