@@ -1,3 +1,3 @@
-#### My Algorithms
+# My Algorithms [![Build Status](https://travis-ci.org/SundayAdefila/Learning_Algorithms.svg?branch=master)](https://travis-ci.org/SundayAdefila/Learning_Algorithms)
 
 Implementing algorithms in ruby...

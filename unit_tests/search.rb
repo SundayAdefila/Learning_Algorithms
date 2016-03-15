@@ -1,7 +1,7 @@
 require 'minitest/autorun'
-require '../algorithms/search/linear_search'
-require '../algorithms/search/binary_search'
-require '../algorithms/search/interpolation_search'
+require './algorithms/search/linear_search'
+require './algorithms/search/binary_search'
+require './algorithms/search/interpolation_search'
 
 class AlgoSearchTest < MiniTest::Test
 

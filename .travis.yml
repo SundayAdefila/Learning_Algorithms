@@ -1,0 +1,6 @@
+cache: bundler
+language: ruby
+rvm:
+  - "2.3.0"
+
+script: ruby -Ilib -e 'ARGV.each { |f| require f }' ./unit_tests/*.rb

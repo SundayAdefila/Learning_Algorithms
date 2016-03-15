@@ -1,6 +1,6 @@
 require 'minitest/autorun'
-require '../algorithms/sort/bubble_sort'
-require '../algorithms/sort/insertion_sort'
+require './algorithms/sort/bubble_sort'
+require './algorithms/sort/insertion_sort'
 
 class AlgoSortTest < MiniTest::Test
   def test_bubble_sort
