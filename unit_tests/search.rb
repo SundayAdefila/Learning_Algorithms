@@ -1,7 +1,5 @@
 require 'minitest/autorun'
-require './algorithms/search/linear_search'
-require './algorithms/search/binary_search'
-require './algorithms/search/interpolation_search'
+Dir['./algorithms/search/**/*.rb'].each { |f| require f }
 
 class AlgoSearchTest < MiniTest::Test
 
