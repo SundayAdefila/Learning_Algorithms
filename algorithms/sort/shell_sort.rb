@@ -5,7 +5,9 @@ module Algorithms
       def sort array
         k = 1 #initial value of interval
         h = 1
-        while h < array.length.to_f / 3 do
+
+        # get highest possible interval with knuth's increment
+        while h < array.length.to_f do
           h = (3**k - 1) / 2
           k += 1
         end

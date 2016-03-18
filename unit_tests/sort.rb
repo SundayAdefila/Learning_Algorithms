@@ -86,4 +86,32 @@ class AlgoSortTest < MiniTest::Test
     # stop = Time.now
     # p (start - stop)
   end
+
+  def test_quick_sort
+    # start = Time.now
+    casses = [
+      [8,7,6,5,4,1,2,3,9,10],
+      [7,2,4,1,8,9,3,5,10,6],
+      [10,9,8,7,6,5,4,3,2,1],
+      [1,2,3,4,6,5,7,8,9,10],
+    ]
+    result = [1,2,3,4,5,6,7,8,9,10]
+    casses.each do |array|
+      assert_equal(result, Algorithms::Sort::Quick.new.sort(array))
+    end
+    assert_equal(['a','b','c','d','e'], Algorithms::Sort::Quick.new.sort(['c','e','a','d','b']))
+    # stop = Time.now
+    # p (start - stop)
+  end
+
+  def test_quick_sort_sort_about_pivot
+    assert_equal([[5,2,4,1,3,6,9,8,7,10,6],0,10, 5], Algorithms::Sort::Quick.new.sort_about_pivot([7,2,4,1,8,9,3,5,10,6,6], 0, 10))
+    assert_equal([[1,10,9,8,7,6,5,4,3,2],0,9, 0], Algorithms::Sort::Quick.new.sort_about_pivot([10,9,8,7,6,5,4,3,2,1], 0, 9))
+    assert_equal([[5,2,4,1,3,6,9,8,7,10],0,9, 5], Algorithms::Sort::Quick.new.sort_about_pivot([7,2,4,1,8,9,3,5,10,6], 0, 9))
+    assert_equal([[8,7,6,5,4,1,2,3,9,10],0,9, 9], Algorithms::Sort::Quick.new.sort_about_pivot([8,7,6,5,4,1,2,3,9,10], 0, 9))
+    assert_equal([[5,2,4,1,3,6,8,9,7,10,6],0,10,5], Algorithms::Sort::Quick.new.sort_about_pivot([5,2,4,1,3,8,9,7,10,6,6], 0, 10))
+    assert_equal([[2,4,5],0,2, 1], Algorithms::Sort::Quick.new.sort_about_pivot([5,2,4], 0, 2))
+    assert_equal([[2,5], 0, 1], Algorithms::Sort::Quick.new.sort_about_pivot([5,2], 0, 1))
+    assert_equal([[5], 0, 0], Algorithms::Sort::Quick.new.sort_about_pivot([5], 0, 0))
+  end
 end
