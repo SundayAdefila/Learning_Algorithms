@@ -4,14 +4,14 @@ Dir['./algorithms/sort/**/*.rb'].each { |f| require f }
 class AlgoSortTest < MiniTest::Test
   def test_bubble_sort
     # start = Time.now
-    casses = [
+    cases = [
       [8,7,6,5,4,1,2,3,9,10],
       [7,2,4,1,8,9,3,5,10,6],
       [10,9,8,7,6,5,4,3,2,1],
       [1,2,3,4,6,5,7,8,9,10],
     ]
     result = [1,2,3,4,5,6,7,8,9,10]
-    casses.each do |array|
+    cases.each do |array|
       assert_equal(result, Algorithms::Sort::Bubble.new.sort(array))
     end
     assert_equal(['a','b','c','d','e'], Algorithms::Sort::Bubble.new.sort(['c','e','a','d','b']))
@@ -21,14 +21,14 @@ class AlgoSortTest < MiniTest::Test
 
   def test_insertion_sort
     # start = Time.now
-    casses = [
+    cases = [
       [8,7,6,5,4,1,2,3,9,10],
       [7,2,4,1,8,9,3,5,10,6],
       [10,9,8,7,6,5,4,3,2,1],
       [1,2,3,4,6,5,7,8,9,10],
     ]
     result = [1,2,3,4,5,6,7,8,9,10]
-    casses.each do |array|
+    cases.each do |array|
       assert_equal(result, Algorithms::Sort::Insertion.new.sort(array))
     end
     assert_equal(['a','b','c','d','e'], Algorithms::Sort::Insertion.new.sort(['c','e','a','d','b']))
@@ -38,14 +38,14 @@ class AlgoSortTest < MiniTest::Test
 
   def test_selection_sort
     # start = Time.now
-    casses = [
+    cases = [
       [8,7,6,5,4,1,2,3,9,10],
       [7,2,4,1,8,9,3,5,10,6],
       [10,9,8,7,6,5,4,3,2,1],
       [1,2,3,4,6,5,7,8,9,10],
     ]
     result = [1,2,3,4,5,6,7,8,9,10]
-    casses.each do |array|
+    cases.each do |array|
       assert_equal(result, Algorithms::Sort::Selection.new.sort(array))
     end
     assert_equal(['a','b','c','d','e'], Algorithms::Sort::Selection.new.sort(['c','e','a','d','b']))
@@ -55,14 +55,14 @@ class AlgoSortTest < MiniTest::Test
 
   def test_merge_sort
     # start = Time.now
-    casses = [
+    cases = [
       [8,7,6,5,4,1,2,3,9,10],
       [7,2,4,1,8,9,3,5,10,6],
       [10,9,8,7,6,5,4,3,2,1],
       [1,2,3,4,6,5,7,8,9,10],
     ]
     result = [1,2,3,4,5,6,7,8,9,10]
-    casses.each do |array|
+    cases.each do |array|
       assert_equal(result, Algorithms::Sort::Merge.new.sort(array))
     end
     assert_equal(['a','b','c','d','e'], Algorithms::Sort::Merge.new.sort(['c','e','a','d','b']))
@@ -72,14 +72,14 @@ class AlgoSortTest < MiniTest::Test
 
   def test_shell_sort
     # start = Time.now
-    casses = [
+    cases = [
       [8,7,6,5,4,1,2,3,9,10],
       [7,2,4,1,8,9,3,5,10,6],
       [10,9,8,7,6,5,4,3,2,1],
       [1,2,3,4,6,5,7,8,9,10],
     ]
     result = [1,2,3,4,5,6,7,8,9,10]
-    casses.each do |array|
+    cases.each do |array|
       assert_equal(result, Algorithms::Sort::Shell.new.sort(array))
     end
     assert_equal(['a','b','c','d','e'], Algorithms::Sort::Shell.new.sort(['c','e','a','d','b']))
@@ -89,14 +89,14 @@ class AlgoSortTest < MiniTest::Test
 
   def test_quick_sort
     # start = Time.now
-    casses = [
+    cases = [
       [8,7,6,5,4,1,2,3,9,10],
       [7,2,4,1,8,9,3,5,10,6],
       [10,9,8,7,6,5,4,3,2,1],
       [1,2,3,4,6,5,7,8,9,10],
     ]
     result = [1,2,3,4,5,6,7,8,9,10]
-    casses.each do |array|
+    cases.each do |array|
       assert_equal(result, Algorithms::Sort::Quick.new.sort(array))
     end
     assert_equal(['a','b','c','d','e'], Algorithms::Sort::Quick.new.sort(['c','e','a','d','b']))
