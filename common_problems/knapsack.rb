@@ -1,16 +1,24 @@
 module CommonProblems
   class Knapsack
 
-    attr_reader :w, :n, :o
+    def find(max_weight, object_array)
+      n = object_array.length
 
-    def initialize(max_weight, object_array)
-      w = max_weight
-      o = object_array
-      n = object_array.length - 1
-    end
+      cost_matrix = Array.new(n){Array.new(max_weight, 0)}
 
-    def find(i, w, oi)
+      return 0 if max_weight == 0 or n == 0
 
+      n.times.each do |i|
+        max_weight.times.each do |j|
+          if object_array[i]['weight'] > j
+            cost_matrix[i][j] = cost_matrix[i-1][j]
+          else
+            cost_matrix[i][j] = [cost_matrix[i-1][j], (cost_matrix[i-1][j-object_array[i]['weight']] + object_array[i]['value'])].max
+          end
+        end
+      end
+
+      cost_matrix[n][max_weight]
     end
 
     # FORMULA V[i, w]
