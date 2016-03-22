@@ -4,12 +4,12 @@ module CommonProblems
     def find(max_weight, object_array)
       n = object_array.length
 
-      cost_matrix = Array.new(n){Array.new(max_weight, 0)}
+      cost_matrix = Array.new(n){Array.new(max_weight+1, 0)}
 
       return 0 if max_weight == 0 or n == 0
 
-      n.times.each do |i|
-        max_weight.times.each do |j|
+      n.times do |i|
+        (max_weight+1).times do |j|
           if object_array[i]['weight'] > j
             cost_matrix[i][j] = cost_matrix[i-1][j]
           else
@@ -18,7 +18,7 @@ module CommonProblems
         end
       end
 
-      cost_matrix[n][max_weight]
+      cost_matrix[n-1][max_weight]
     end
 
     # FORMULA V[i, w]
